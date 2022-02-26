@@ -11,6 +11,6 @@
 last 1 Chrome version
 last 1 Firefox version
 last 2 Edge major versions
-last 2 Safari major versions
+# last 2 Safari major versions #ndion_comment to run 'ng build' | remove and reinstall node modules with core and cli latest versions |250222
 last 2 iOS major versions
 Firefox ESR
