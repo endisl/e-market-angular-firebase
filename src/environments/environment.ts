@@ -7,6 +7,7 @@ export const environment = {
   firebase: {
     apiKey: "AIzaSyAEYGH6sO5pv8iF3rFYw40ECAVlNNH0uAU",
     authDomain: "emarket-b1cd2.firebaseapp.com",
+    databaseURL: "https://emarket-b1cd2-default-rtdb.firebaseio.com/",
     projectId: "emarket-b1cd2",
     storageBucket: "emarket-b1cd2.appspot.com",
     messagingSenderId: "738103637941",
