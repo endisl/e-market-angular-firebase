@@ -8,7 +8,11 @@ import { AppUser } from '../models/app.user';
   styleUrls: ['./bs-navbar.component.css']
 })
 export class BsNavbarComponent {
-  appUser!: AppUser;
+  appUser: AppUser | null = {
+    name: "",
+    email: "",
+    isAdmin: false
+  };
 
   constructor(private auth: AuthService) {
     auth.appUser$.subscribe(appUser => this.appUser = appUser);
@@ -16,5 +20,6 @@ export class BsNavbarComponent {
 
   logout() {
     this.auth.logout();
+    //console.log(this.appUser);
   }
 }
