@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireObject } from '@angular/fire/compat/database';
 import { Observable } from 'rxjs';
 import { CategoryService } from 'src/app/category.service';
 import { ProductService } from 'src/app/product.service';
