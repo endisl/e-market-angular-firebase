@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CategoryService } from 'src/app/category.service';
 import { ProductService } from 'src/app/product.service';
@@ -11,13 +12,17 @@ import { ProductService } from 'src/app/product.service';
 export class ProductFormComponent implements OnInit {
   categories$: Observable<any>;
 
-  constructor(categoryService: CategoryService, private productService: ProductService) {
+  constructor(
+    private categoryService: CategoryService,
+    private productService: ProductService,
+    private router: Router) {
     this.categories$ = categoryService.getCategories();
   }
 
   save(product: any) {
     this.productService.create(product);
     //console.log(product);
+    this.router.navigate(['/admin/products'])
   }
 
   ngOnInit(): void {
