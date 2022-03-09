@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { AngularFireDatabase, AngularFireObject } from '@angular/fire/compat/database';
 import { Observable } from 'rxjs';
+import { AppProduct } from './models/app.product';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,11 @@ export class ProductService {
   }
 
   getAll(): Observable<any> {
-    return this.db.list('/products').valueChanges();
+    return this.db.list('/products').snapshotChanges();
+  }
+
+  get(productId: any): AngularFireObject<any> {
+    //console.log(productId);
+    return this.db.object('/products/' + productId);
   }
 }
