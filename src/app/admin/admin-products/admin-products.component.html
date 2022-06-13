@@ -23,31 +23,17 @@
         [sortable]="true"
         [resizable]="true"
 
-        <ng-template #dataTableCell let-item="product">
-            {{ product.price | currency: 'USD':true }}
+        <ng-template #dataTableCell let-item="item">
+            {{ item.price | currency: 'USD':true }}
         </ng-template>
     </data-table-column>
 
+    <data-table-column>
+        [property]="'$key'"
 
+        <ng-template #dataTableCell let-item="item">
+            <a [routerLink]="['/admin/products/', item.$key]">Edit</a>
+        </ng-template>
+    </data-table-column>
 
 </data-table>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Price</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let p of filteredProducts">
-            <td>{{ p.payload.val().title }}</td>
-            <td>{{ p.payload.val().price }}</td>
-            <td>
-                <a [routerLink]="['/admin/products/', p.key]">Edit</a>
-            </td>
-        </tr>
-    </tbody>
-
-</table>
