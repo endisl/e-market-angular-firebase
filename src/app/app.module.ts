@@ -27,6 +27,7 @@ import { CategoryService } from './category.service';
 import { FormsModule } from '@angular/forms';
 import { ProductService } from './product.service';
 import { CustomFormsModule } from 'ng2-validation';
+import { DataTableModule } from 'angular-4-data-table';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { CustomFormsModule } from 'ng2-validation';
     NgbModule,
     FormsModule,
     CustomFormsModule,
+    DataTableModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'products', component: ProductsComponent },
